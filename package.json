@@ -1,18 +1,19 @@
 {
-  "engines": {
-    "node": ">=16"
-  },
   "name": "major-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "commonjs",
   "dependencies": {
     "@mapbox/mapbox-sdk": "^0.16.1",
     "cloudinary": "^1.21.0",
@@ -33,6 +34,5 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
   },
-  "devDependencies": {},
-  "type": "commonjs"
+  "devDependencies": {}
 }
