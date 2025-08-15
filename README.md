@@ -29,5 +29,18 @@ Cozystay is a full-stack web application built with **Node.js**, **Express.js**,
 
 ---
 
-## 
+## 📷 Screenshots
+
+(You can add screenshots here of the homepage, listing page, form, etc.)
+
+📌 License
+
+This project is licensed under the MIT License.
+
+🙋‍♂️ Author
+
+ANURAG CHAURASIYA
+
+📧 Email: anurag9120959628@gmail.com
+💼 Portfolio/GitHub: [anurag91920]
 
