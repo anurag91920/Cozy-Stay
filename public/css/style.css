@@ -24,37 +24,72 @@ body {
     color: #222222 !important;
 }
 
+.nav-link:hover {
+    color: #fe424d !important;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .f-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .f-info-links {
+    margin-top: 10px;
+  }
+}
+
 /* Footer */
-.f-info-links a {
-    text-decoration: none ;
-    color: #222222;
-}
-
-.f-info-links a:hover {
-    text-decoration: underline ;
-}
-
-.f-info-links, .f-info-socials, .f-info-brand {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.f-info-socials i {
-    margin-right: 1rem;
-    font-size: 1.2rem;
+footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 10px;
 }
 
 .f-info {
-    text-align: center;
-    display: flex;
-    height: 8rem;
-    background-color:#ebebeb ;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
+  display: flex;
+  flex-wrap: wrap; /* mobile ke liye stack ho sake */
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
 }
+
+.f-info-socials a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 22px;
+  transition: color 0.3s ease;
+}
+
+.f-info-socials a:hover {
+  color: #1da1f2;
+}
+
+.f-info-links a {
+  margin: 0 10px;
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.f-info-links a:hover {
+  color: #fff;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .f-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .f-info-links {
+    margin-top: 10px;
+  }
+}
+
 
   /* Cards */
   listing.card {
