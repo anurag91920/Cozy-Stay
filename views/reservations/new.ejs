@@ -1,0 +1,24 @@
+<%- include("../layouts/boilerplate") %>
+
+<div class="container mt-4">
+  <h3>Reserve: <%= listing.title %></h3>
+
+  <form action="/listings/<%= listing._id %>/reserve" method="POST">
+    <div class="form-group">
+      <label for="checkin">Check-in</label>
+      <input type="date" name="checkin" id="checkin" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="checkout">Check-out</label>
+      <input type="date" name="checkout" id="checkout" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="guests">Guests</label>
+      <input type="number" name="guests" id="guests" class="form-control" min="1" required>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Confirm Reservation</button>
+  </form>
+</div>
