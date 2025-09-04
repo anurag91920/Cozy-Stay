@@ -42,8 +42,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-//  Reservation routes
-app.use("/listings", reservationRoutes);
+
 
 
 
@@ -102,6 +101,9 @@ app.use((req, res, next) => {
 //   let registeredUser = await User.register(fakeUser, "helloworld");
 //   res.send(registeredUser);
 // });
+
+//  Reservation routes
+app.use("/listings", reservationRoutes);
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);

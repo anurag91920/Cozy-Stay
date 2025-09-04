@@ -1,24 +1,33 @@
-<%- include("../layouts/boilerplate") %>
+<% layout("../layouts/boilerplate") %>
 
-<div class="container mt-4">
-  <h3>Reserve: <%= listing.title %></h3>
+<div class="container mt-5">
+  <h2 class="mb-4">Reserve: <%= listing.title %></h2>
 
-  <form action="/listings/<%= listing._id %>/reserve" method="POST">
-    <div class="form-group">
-      <label for="checkin">Check-in</label>
-      <input type="date" name="checkin" id="checkin" class="form-control" required>
+  <form action="/listings/<%= listing._id %>/reserve" method="POST" class="shadow p-4 rounded bg-light">
+
+    <!-- Check-in Date -->
+    <div class="mb-3">
+      <label for="checkin" class="form-label">Check-in Date</label>
+      <input type="date" id="checkin" name="checkin" class="form-control" required>
     </div>
 
-    <div class="form-group">
-      <label for="checkout">Check-out</label>
-      <input type="date" name="checkout" id="checkout" class="form-control" required>
+    <!-- Check-out Date -->
+    <div class="mb-3">
+      <label for="checkout" class="form-label">Check-out Date</label>
+      <input type="date" id="checkout" name="checkout" class="form-control" required>
     </div>
 
-    <div class="form-group">
-      <label for="guests">Guests</label>
-      <input type="number" name="guests" id="guests" class="form-control" min="1" required>
+    <!-- Number of Guests -->
+    <div class="mb-3">
+      <label for="guests" class="form-label">Number of Guests</label>
+      <input type="number" id="guests" name="guests" class="form-control" min="1" value="1" required>
     </div>
 
-    <button type="submit" class="btn btn-success mt-3">Confirm Reservation</button>
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary w-100">Confirm Reservation</button>
   </form>
 </div>
+<style>
+  body {
+    background-color: #f8f9fa;
+  }

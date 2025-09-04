@@ -4,51 +4,43 @@ const Reservation = require("../models/reservation");
 const Listing = require("../models/listing");
 const { isLoggedIn } = require("../middleware");
 
-// Reservation form show
+// Reservation form
 router.get("/:id/reserve", isLoggedIn, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const listing = await Listing.findById(id);
-    if (!listing) {
-      req.flash("error", "Listing not found!");
-      return res.redirect("/listings");
-    }
-    res.render("reservations/new", { listing });
-  } catch (err) {
-    console.error(err);
-    req.flash("error", "Something went wrong!");
-    res.redirect("/listings");
+  console.log(" Reservation GET route hit with id:", req.params.id); // Debug log
+
+  const { id } = req.params;
+  const listing = await Listing.findById(id);
+  if (!listing) {
+    req.flash("error", "Listing not found!");
+    return res.redirect("/listings");
   }
+  res.render("reservations/new", { listing });
 });
 
-// Reservation save
+// Handle reservation POST
 router.post("/:id/reserve", isLoggedIn, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { checkin, checkout, guests } = req.body;
+  console.log(" Reservation POST route hit with id:", req.params.id); // Debug log
 
-    const listing = await Listing.findById(id);
-    if (!listing) {
-      req.flash("error", "Listing not found!");
-      return res.redirect("/listings");
-    }
+  const { id } = req.params;
+  const { checkin, checkout, guests } = req.body;
 
-    const reservation = new Reservation({
-      listing: id,
-      user: req.user._id,
-      checkin,
-      checkout,
-      guests
-    });
-
-    await reservation.save();
-    req.flash("success", "Reservation confirmed!");
-    res.redirect(`/listings/${id}`);
-  } catch (err) {
-    console.error(err);
-    req.flash("error", "Something went wrong!");
-    res.redirect("back");
+  const listing = await Listing.findById(id);
+  if (!listing) {
+    req.flash("error", "Listing not found!");
+    return res.redirect("/listings");
   }
+
+  const reservation = new Reservation({
+    listing: id,
+    user: req.user._id,
+    checkin,
+    checkout,
+    guests
+  });
+
+  await reservation.save();
+  req.flash("success", "Reservation confirmed!");
+  res.redirect(`/listings/${id}`);
 });
 
 module.exports = router;
