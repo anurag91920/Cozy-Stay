@@ -23,6 +23,33 @@
       <input type="number" id="guests" name="guests" class="form-control" min="1" value="1" required>
     </div>
 
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email Address</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        class="form-control" 
+        placeholder="example@email.com"
+        required
+      >
+    </div>
+
+    <!-- Mobile Number -->
+    <div class="mb-3">
+      <label for="mobile" class="form-label">Mobile Number</label>
+      <input 
+        type="tel" 
+        id="mobile" 
+        name="mobile" 
+        class="form-control" 
+        placeholder="Enter 10-digit mobile number"
+        pattern="[0-9]{10}"
+        required
+      >
+    </div>
+
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary w-100">Confirm Reservation</button>
   </form>
