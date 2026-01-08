@@ -1,0 +1,63 @@
+<% layout("layouts/boilerplate") %>
+
+
+<div class="container mt-5">
+  <h2 class="mb-4">My Reservations</h2>
+
+  <% if (reservations.length === 0) { %>
+    <div class="alert alert-info">
+      You have no reservations yet.
+    </div>
+  <% } %>
+
+  <div class="row">
+    <% reservations.forEach(reservation => { %>
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= reservation.listing.title %>
+            </h5>
+
+            <p class="mb-1">
+              <strong>Check-in:</strong>
+              <%= reservation.checkin.toDateString() %>
+            </p>
+
+            <p class="mb-1">
+              <strong>Check-out:</strong>
+              <%= reservation.checkout.toDateString() %>
+            </p>
+
+            <p class="mb-1">
+              <strong>Guests:</strong>
+              <%= reservation.guests %>
+            </p>
+
+            <p class="mb-1">
+              <strong>Email:</strong>
+              <%= reservation.email %>
+            </p>
+
+            <p class="mb-1">
+              <strong>Mobile:</strong>
+              <%= reservation.mobile %>
+            </p>
+
+            <p class="text-muted mt-2">
+              Booked on:
+              <%= reservation.createdAt.toDateString() %>
+            </p>
+
+            <a
+              href="/listings/<%= reservation.listing._id %>"
+              class="btn btn-outline-primary btn-sm mt-2"
+            >
+              View Listing
+            </a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>

@@ -129,6 +129,13 @@
           </a>
         </li>
 
+        <% if (currUser) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/reservations/my">My Reservations</a>
+          </li>
+        <% } %>
+
+
         <% if (!currUser) { %>
           <li class="nav-item">
             <a class="nav-link fw-bold" href="/signup">Sign Up</a>

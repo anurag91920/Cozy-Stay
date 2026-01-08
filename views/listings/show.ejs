@@ -66,6 +66,18 @@
               <label class="form-label">Guests</label>
               <input type="number" name="guests" class="form-control" min="1" max="10" value="1" required>
             </div>
+            <!-- Email -->
+            <div class="mb-3">
+             <label class="form-label">Email</label>
+             <input type="email" name="email" class="form-control" required >
+            </div>
+
+            <!-- Mobile -->
+            <div class="mb-3">
+              <label class="form-label">Mobile</label>
+              <input type="tel" name="mobile" class="form-control" pattern="[0-9]{10}" required >
+            </div>
+
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-success">Confirm Reservation</button>

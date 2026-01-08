@@ -103,7 +103,10 @@ app.use((req, res, next) => {
 // });
 
 //  Reservation routes
-app.use("/listings", reservationRoutes);
+//  CORRECT
+app.use("/reservations", reservationRoutes);
+
+// app.use("/listings", reservationRoutes);
 
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
